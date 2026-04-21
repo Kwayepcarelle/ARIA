@@ -9,27 +9,16 @@ def init_database():
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS etudiants (
-            id INTEGER PRIMARY KEY AUTOINCREMENT ,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             date_soumission TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            pays TEXT,
-            ville TEXT,
-            universite TEXT,
-            filiere TEXT,
-            niveau TEXT,
-            genre TEXT,
-            age INTEGER,
-            moyenne_generale REAL,
-            heures_etude REAL,
-            acces_internet INTEGER,
-            charge_familiale INTEGER,
-            pression_financiere INTEGER,
-            barriere_linguistique INTEGER,
-            coupures_electricite INTEGER,
-            temps_transport REAL,
-            niveau_stress INTEGER,
-            confiance_soi INTEGER,
-            sentiment_appartenance INTEGER,
-            qualite_sommeil INTEGER,
+            pays TEXT, ville TEXT, universite TEXT, filiere TEXT,
+            niveau TEXT, genre TEXT, age INTEGER,
+            moyenne_generale REAL, heures_etude REAL,
+            acces_internet INTEGER, charge_familiale INTEGER,
+            pression_financiere INTEGER, barriere_linguistique INTEGER,
+            coupures_electricite INTEGER, temps_transport REAL,
+            niveau_stress INTEGER, confiance_soi INTEGER,
+            sentiment_appartenance INTEGER, qualite_sommeil INTEGER,
             statut TEXT
         )
     ''')
@@ -65,7 +54,7 @@ def charger_donnees():
     conn = sqlite3.connect(DB_PATH)
     df = pd.read_sql_query("SELECT * FROM etudiants", conn)
     conn.close()
-    return df
+    return df  # ← indenté correctement
 
 def compter_etudiants():
     conn = sqlite3.connect(DB_PATH)
@@ -73,5 +62,4 @@ def compter_etudiants():
     cursor.execute("SELECT COUNT(*) FROM etudiants")
     count = cursor.fetchone()[0]
     conn.close()
-    return count      
- 
+    return count  # ← indenté correctement
