@@ -42,21 +42,24 @@ def inserer_etudiant(data):
     cursor.execute('''
         INSERT INTO etudiants (
             pays, ville, universite, filiere, niveau, genre, age,
-            moyenne_generale, heures_etude, acces_internet, 
+            moyenne_generale, heures_etude, acces_internet,
             charge_familiale, pression_financiere, barriere_linguistique,
-            coupures_electricite, temps_transport, niveau_tress,
-             confiance_soi, sentiment_appartenance, qualite_sommeil, statut
+            coupures_electricite, temps_transport, niveau_stress,
+            confiance_soi, sentiment_appartenance, qualite_sommeil, statut
         ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     ''', (
-        date['pays'], date['ville'], date['universite'],
-        date['filiere'], date['niveau'], date['genre'], date['age'],
-        date['moyenne_generale'], date['heures_etude'], date['acces_internet'],
-        date['charge_familiale'], date['pression_financiere'],
-        date['barriere_linguistique'], date['coupures_electricite'],
-        date['temps_transport'], date['niveau_stress'],
-        date['confiance_soi'], date['sentiment_appartenance'],
-        date['qualite_sommeil'], data['statut']
+        str(data['pays']), str(data['ville']), str(data['universite']),
+        str(data['filiere']), str(data['niveau']), str(data['genre']),
+        int(data['age']), float(data['moyenne_generale']),
+        float(data['heures_etude']), int(data['acces_internet']),
+        int(data['charge_familiale']), int(data['pression_financiere']),
+        int(data['barriere_linguistique']), int(data['coupures_electricite']),
+        float(data['temps_transport']), int(data['niveau_stress']),
+        int(data['confiance_soi']), int(data['sentiment_appartenance']),
+        int(data['qualite_sommeil']), str(data['statut'])
     ))
+    conn.commit()
+    conn.close()
 
 def charger_donnees():
     conn = sqlite3.connect(DB_PATH)
