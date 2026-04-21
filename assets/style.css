@@ -1,0 +1,230 @@
+/* ══════════════════════════════════════
+   ARIA — African Resilience & Intelligence Analytics
+   Design System — Niveau MIT
+══════════════════════════════════════ */
+
+/* ── Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Variables ── */
+:root {
+    --primary: #e94560;
+    --secondary: #0f3460;
+    --accent: #a8dadc;
+    --dark: #1a1a2e;
+    --darker: #16213e;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --text-light: #f1faee;
+    --card-bg: rgba(255,255,255,0.05);
+}
+
+/* ── Background global ── */
+.stApp {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f3460 100%);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Texte global ── */
+.stApp, .stMarkdown, p, span, label {
+    color: #e8e8f0 !important;
+}
+
+/* ── Sidebar ── */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%) !important;
+    border-right: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+[data-testid="stSidebar"] .stRadio label {
+    color: #a8dadc !important;
+    font-weight: 500;
+    padding: 0.3rem 0;
+    transition: color 0.3s;
+}
+
+[data-testid="stSidebar"] .stRadio label:hover {
+    color: #e94560 !important;
+}
+
+/* ── Titre principal ── */
+h1 {
+    font-family: 'Orbitron', monospace !important;
+    color: #e94560 !important;
+    text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+    letter-spacing: 4px;
+}
+
+h2, h3 {
+    color: #a8dadc !important;
+    font-weight: 600;
+}
+
+/* ── Cards métriques ── */
+[data-testid="stMetric"] {
+    background: linear-gradient(135deg,
+        rgba(233,69,96,0.15),
+        rgba(15,52,96,0.3)) !important;
+    border: 1px solid rgba(233, 69, 96, 0.3);
+    border-radius: 15px !important;
+    padding: 1rem !important;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.3);
+}
+
+[data-testid="stMetricLabel"] {
+    color: #a8dadc !important;
+    font-size: 0.85rem !important;
+    font-weight: 500;
+}
+
+[data-testid="stMetricValue"] {
+    color: #e94560 !important;
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+}
+
+/* ── Boutons ── */
+.stButton button {
+    background: linear-gradient(135deg, #e94560, #c0392b) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 2rem !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    letter-spacing: 1px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4) !important;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.6) !important;
+}
+
+/* ── Formulaire ── */
+.stForm {
+    background: rgba(255,255,255,0.03) !important;
+    border: 1px solid rgba(168, 218, 220, 0.2);
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    backdrop-filter: blur(10px);
+}
+
+/* ── Sliders ── */
+.stSlider [data-baseweb="slider"] {
+    color: #e94560 !important;
+}
+
+.stSlider [data-baseweb="thumb"] {
+    background: #e94560 !important;
+    border: 2px solid white !important;
+}
+
+/* ── Select boxes ── */
+.stSelectbox [data-baseweb="select"] {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(168, 218, 220, 0.3) !important;
+    border-radius: 8px !important;
+    color: white !important;
+}
+
+/* ── Text inputs ── */
+.stTextInput input {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(168, 218, 220, 0.3) !important;
+    border-radius: 8px !important;
+    color: white !important;
+}
+
+.stTextInput input:focus {
+    border-color: #e94560 !important;
+    box-shadow: 0 0 10px rgba(233, 69, 96, 0.3) !important;
+}
+
+/* ── Alerts ── */
+.stSuccess {
+    background: rgba(46, 204, 113, 0.15) !important;
+    border: 1px solid #2ecc71 !important;
+    border-radius: 10px !important;
+}
+
+.stWarning {
+    background: rgba(243, 156, 18, 0.15) !important;
+    border: 1px solid #f39c12 !important;
+    border-radius: 10px !important;
+}
+
+.stError {
+    background: rgba(231, 76, 60, 0.15) !important;
+    border: 1px solid #e74c3c !important;
+    border-radius: 10px !important;
+}
+
+.stInfo {
+    background: rgba(168, 218, 220, 0.1) !important;
+    border: 1px solid rgba(168, 218, 220, 0.4) !important;
+    border-radius: 10px !important;
+}
+
+/* ── Tabs ── */
+.stTabs [data-baseweb="tab-list"] {
+    background: rgba(255,255,255,0.03) !important;
+    border-radius: 10px !important;
+    padding: 0.3rem !important;
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: #a8dadc !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #e94560, #c0392b) !important;
+    color: white !important;
+}
+
+/* ── Dataframe ── */
+.stDataFrame {
+    border: 1px solid rgba(168, 218, 220, 0.2) !important;
+    border-radius: 10px !important;
+    overflow: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #e94560;
+    border-radius: 3px;
+}
+
+/* ── Divider ── */
+hr {
+    border: none !important;
+    border-top: 1px solid rgba(233, 69, 96, 0.3) !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* ── Animations ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.stMarkdown, .stMetric, .stPlotlyChart {
+    animation: fadeIn 0.5s ease-out;
+}
